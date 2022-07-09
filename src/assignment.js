@@ -14,9 +14,16 @@ const assignment = {};
  * @returns number the sum of the numbers
  */
 function sumOfNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+  let sum = 0;
+  for (let index = 0; index < arrayOfNumbers.length; index++) {
+    let isNotNumber = isNaN(arrayOfNumbers[index]);
+    if(!isNotNumber){
+      sum += Number(arrayOfNumbers[index]);
+    }
+  }
+  return sum;
 }
-// assignment.sumOfNumbers = sumOfNumbers;
+assignment.sumOfNumbers = sumOfNumbers;
 
 /**
  * Challenge - 2
@@ -28,9 +35,20 @@ function sumOfNumbers(arrayOfNumbers) {
  * @returns number the count of even numbers
  */
 function countEvenNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+  let evenNumberCount = 0;
+  for (let index = 0; index < arrayOfNumbers.length; index++) {
+    let currentNumber = arrayOfNumbers[index];
+    let isNotNumber = isNaN(currentNumber);
+    if(!isNotNumber){
+      let isEven = currentNumber % 2 == 0;
+      if(isEven){
+        evenNumberCount++;
+      }
+    }
+  }
+  return evenNumberCount;
 }
-// assignment.countEvenNumbers = countEvenNumbers;
+assignment.countEvenNumbers = countEvenNumbers;
 
 /**
  * Challenge - 3
@@ -47,9 +65,18 @@ function countEvenNumbers(arrayOfNumbers) {
  * @returns Array the converted temperatures in Fahrenheit
  */
 function celsiusToFahrenheit(arrayOfNumbers) {
-    return arrayOfNumbers;
+  let fahrenheitArray = [];
+  for (let index = 0; index < arrayOfNumbers.length; index++) {
+    let currentNumber = arrayOfNumbers[index];
+    let isNotNumber = isNaN(currentNumber);
+    if(!isNotNumber){
+      let fahrenheit = (currentNumber * 1.8) + 32;
+      fahrenheitArray.push(Math.trunc(fahrenheit))
+    }
+  }
+  return fahrenheitArray;
 }
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 
 // ========================
